@@ -41,6 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1078382357796706819}
+  - component: {fileID: 2017627922}
   m_Layer: 0
   m_Name: Band Bone
   m_TagString: Untagged
@@ -64,6 +65,19 @@ Transform:
   m_Father: {fileID: 6612456930599372690}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2017627922
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544910635869688712}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 0.02}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1006532576629210935
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,9 +200,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2697937703101003380}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.012283925, y: 2.405893, z: 0.06373647}
-  m_LocalScale: {x: 100, y: 100, z: 214.61923}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.012283925, y: 0.80196434, z: 0.06373647}
+  m_LocalScale: {x: 30.000002, y: 30.000002, z: 64.38577}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5154752475105881138}
   m_Father: {fileID: 8103756772986090758}
@@ -286,6 +300,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8103756772986090758}
+  - component: {fileID: 997228001}
   m_Layer: 0
   m_Name: Sling
   m_TagString: Untagged
@@ -309,6 +324,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &997228001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3232747994568883148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 339a426cf010b034c9ea329a99fae9c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SlingCollider: {fileID: 2017627922}
+  PullForceVerticalLimit: 1
+  PullForceHorizontalLimit: 0.35
 --- !u!1 &3348583144910289041
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class SlingshotController : MonoBehaviour
 {
   #region Fields
 
-  [SerializeField] private Collider SlingCollider;
+  [SerializeField] private Collider SlingshotPuller;
   [SerializeField] private Human Human;
 
   [Space]
@@ -20,6 +20,7 @@ public class SlingshotController : MonoBehaviour
   [SerializeField] private float SlingPositionResetDuration = .075f;
 
   private Vector3 _defaultSlingshotPosition;
+  private Vector3 _defaultSlingshotRotation;
   
   private Vector2 _lastFingerPosition;
   private float _moveFactorX;
@@ -40,24 +41,31 @@ public class SlingshotController : MonoBehaviour
   #region Unity Functions
   private void OnEnable()
   {
-    _camera = Camera.main;
-
-    _projection = GetComponent<Projection>();
-    
-    _defaultSlingshotPosition = SlingCollider.transform.position;
+    Init();
   }
   private void Update()
   {
     InputConfiguration();
   }
   #endregion
-  
-  
-  
-  
-  
-  
-    #region Input
+
+
+  #region Init
+  private void Init()
+  {
+    _camera = Camera.main;
+
+    _projection = GetComponent<Projection>();
+
+    var slingshotPullerTransform = SlingshotPuller.transform;
+    _defaultSlingshotPosition = slingshotPullerTransform.position;
+    _defaultSlingshotRotation = slingshotPullerTransform.localEulerAngles;
+  }
+  #endregion
+
+
+
+  #region Input
   /// <summary>
   /// Updates the swerving inputs
   /// </summary>
@@ -93,30 +101,40 @@ public class SlingshotController : MonoBehaviour
     }
   }
 
+  /// <summary>
+  /// Executes when a finger has touched to the screen
+  /// </summary>
   private void OnFingerBegan()
   {
             
     Ray ray = _camera.ScreenPointToRay(Input.touches[0].position);
-    if (Physics.Raycast(ray, out var raycastHit, 100f))
+    
+    if (!Physics.Raycast(ray, out var raycastHit, 100f))
+      return;
+    
+    //Checks if the touch is on the sling or not 
+    if (raycastHit.collider == SlingshotPuller)
     {
-      //Checks if the touch is on the sling or not 
-      if (raycastHit.collider == SlingCollider)
-      {
-        _pullingSling = true;
-        _lastFingerPosition = Input.touches[0].position;
-      }
-
-      else { _pullingSling = false; }
+      _pullingSling = true;
+      _lastFingerPosition = Input.touches[0].position;
     }
+
+    else { _pullingSling = false; }
 
   }
 
+  /// <summary>
+  /// Executes when the touch has been moved
+  /// </summary>
   private void OnFingerMoved()
   {
     _moveFactorX = Input.touches[0].position.x - _lastFingerPosition.x;
     _moveFactorY = Input.touches[0].position.y - _lastFingerPosition.y;
   }
   
+  /// <summary>
+  /// Executes when the finger has released 
+  /// </summary>
   private void OnFingerReleased()
   {
     _moveFactorX = 0f;
@@ -126,10 +144,13 @@ public class SlingshotController : MonoBehaviour
     {
         Human.Throw(_projection);
     }
-      
     
-    SlingCollider.transform.DOMove(_defaultSlingshotPosition, SlingPositionResetDuration);
-    
+    SlingshotPuller.transform.DOMove(_defaultSlingshotPosition, SlingPositionResetDuration);
+    SlingshotPuller.transform.DORotate(_defaultSlingshotRotation + Vector3.up*90f, SlingPositionResetDuration);
+
+    //Reset the trajectory simulation
+    _projection.ResetTrajectoryForce();
+
     _pullingSling = false;
   }
   
@@ -140,6 +161,7 @@ public class SlingshotController : MonoBehaviour
   /// </summary>
   private void PullSling()
   {
+    //-------------------------------------------------POSITION-------------------------------------------------\\
     //Get target positions based on finger position
     var pullPositionX = (Vector3.right * _moveFactorX / 1000).x;
     var pullPositionZ = (Vector3.forward * _moveFactorY / 500).z;
@@ -147,12 +169,35 @@ public class SlingshotController : MonoBehaviour
     //Sets the limit for positions
     pullPositionX = Mathf.Clamp(pullPositionX, -PullForceHorizontalLimit, PullForceHorizontalLimit);
     pullPositionZ = Mathf.Clamp(pullPositionZ, -PullForceVerticalLimit, PullForceVerticalLimit);
-    
+
+    #region Applied Trajectory Simulation
+    //Apply force to the trajectory simulation
+
+    var appliedForce = (int)(Mathf.Abs(pullPositionZ * 5f));
+    _projection.UpdateTrajectoryForce(appliedForce);
+    //------------------------------------------------------------------------------
+
+    #endregion
+
     //Setting new position visualizing the pull
     var slingPosition = _defaultSlingshotPosition + new Vector3(pullPositionX, 0f, pullPositionZ);
     
     //Assign new position
-    SlingCollider.transform.position = slingPosition;
+    SlingshotPuller.transform.position = slingPosition;
+    //-----------------------------------------------------------------------------------------------------------\\
+    
+    
+    //-------------------------ROTATION-------------------------\\
+    var targetAngle = -pullPositionX * 25f;
+
+    var slingRotation = new Vector3(
+      _defaultSlingshotRotation.x,
+      targetAngle + _defaultSlingshotRotation.y,
+      _defaultSlingshotRotation.z
+    );
+
+    SlingshotPuller.transform.localEulerAngles = slingRotation;
+    //----------------------------------------------------------\\
   }
   
 }

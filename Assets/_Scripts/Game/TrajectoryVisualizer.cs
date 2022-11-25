@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrajectoryBall : MonoBehaviour
+public class TrajectoryVisualizer : MonoBehaviour
 {
     private Rigidbody _rigidbody;
 
@@ -14,7 +14,6 @@ public class TrajectoryBall : MonoBehaviour
 
     public void Init(Vector3 velocity)
     {
-        
         _rigidbody.AddForce(velocity, ForceMode.Impulse);
     }
 }

@@ -12,6 +12,7 @@ public class Human : MonoBehaviour
   #region Components
   private Animator _animator;
   private Rigidbody _rigidbody;
+  private Collider _collider;
   #endregion
 
   #region Animation Hashing
@@ -23,15 +24,21 @@ public class Human : MonoBehaviour
   {
     _animator = GetComponent<Animator>();
     _rigidbody = GetComponent<Rigidbody>();
+    _collider = GetComponent<Collider>();
   }
   #endregion
     
     
     public void Throw(Projection projection)
-    {     
-      _rigidbody.isKinematic = false;
-      _rigidbody.AddForce(projection.Force, ForceMode.Impulse);
+    {
+      transform.parent = null;
       
-       _animator.SetTrigger(Jump); 
+      _rigidbody.isKinematic = false;
+      _collider.isTrigger = false;
+  
+      _rigidbody.AddForce(projection.Force, ForceMode.Impulse);
+
+      _animator.applyRootMotion = false;
+      _animator.SetTrigger(Jump); 
     }
 }

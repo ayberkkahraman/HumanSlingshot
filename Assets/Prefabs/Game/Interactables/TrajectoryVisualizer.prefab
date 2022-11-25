@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2781482176268213616}
   - component: {fileID: 7564271600634140867}
   m_Layer: 0
-  m_Name: TrajectoryBall
+  m_Name: TrajectoryVisualizer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

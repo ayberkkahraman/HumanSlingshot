@@ -8,59 +8,114 @@ public class Projection : MonoBehaviour
 {
   private Scene _simulationScene;
   private PhysicsScene _physicsScene;
+
+  private const string Simulation = ""; // The name of the Simulation Scene
   
   [Header("Fields")]
-  [SerializeField] private Transform ObjectsHolder;
   [SerializeField] private LineRenderer LineRenderer;
-  
-  
+
+
   [Space]
   [Header("Trajectory")]
-  [SerializeField] private TrajectoryBall TrajectoryBallPrefab;
-  [SerializeField] private Material TrajectoryMaterial;
+  [SerializeField] private TrajectoryVisualizer TrajectoryVisualizerPrefab;
   [SerializeField] private Transform TrajectoryBallSpawnTransform;
+  
   [Range(10f, 50f)]
   [SerializeField] private float TrajectoryBallForce = 20f;
-  [SerializeField] private Vector3 TrajectoryDirection;
+
+  public float TrajectoryForce
+  {
+    get => TrajectoryBallForce;
+    set => TrajectoryBallForce = value;
+  }
+  
+  
+  [Range(.0f,1f)]
+  [SerializeField] private float TrajectoryHeight = .5f;
+  public float TrajectoryHeightForce
+  {
+    get => TrajectoryHeight;
+    set => TrajectoryHeight = value;
+  }
+  
   [Range(5,100)]
   [SerializeField] private int MaxPhysicsFrameIterations = 25;
 
-  [HideInInspector] public Vector3 Force => TrajectoryDirection * TrajectoryBallForce;
+  public int PhysicsFrameIterations
+  {
+    get => MaxPhysicsFrameIterations;
+    set => MaxPhysicsFrameIterations = value;
+  }
+  
+  [HideInInspector] public int DefaultIterationsCount;
+  [HideInInspector] public float DefaultTrajectoryHeight;
+  [HideInInspector] public float DefaultTrajectoryForce;
+  
+
+  [HideInInspector] public Vector3 Force => TrajectoryBallSpawnTransform.rotation * (Vector3.forward - Vector3.right*TrajectoryHeightForce) * TrajectoryForce;
   
 
   private void Start()
   {
+      DefaultIterationsCount = PhysicsFrameIterations;
+      DefaultTrajectoryHeight = TrajectoryHeightForce;
+      DefaultTrajectoryForce = TrajectoryForce;
+      
       CreatePhysicScene();
   }
 
   private void Update()
   {
-    SimulateTrajectory(TrajectoryBallPrefab, TrajectoryBallSpawnTransform.position, TrajectoryDirection * TrajectoryBallForce);
+    SimulateTrajectory(TrajectoryVisualizerPrefab, TrajectoryBallSpawnTransform.position, Force);
   }
 
 
   private void CreatePhysicScene()
   {
-    _simulationScene = SceneManager.CreateScene("Simulation", new CreateSceneParameters(LocalPhysicsMode.Physics3D));
+    _simulationScene = SceneManager.CreateScene(nameof(Simulation), new CreateSceneParameters(LocalPhysicsMode.Physics3D));
     _physicsScene = _simulationScene.GetPhysicsScene();
   }
 
-  private void SimulateTrajectory(TrajectoryBall trajectoryBallPrefab, Vector3 position, Vector3 velocity)
+  private void SimulateTrajectory(TrajectoryVisualizer trajectoryVisualizerPrefab, Vector3 position, Vector3 velocity)
   {
-    var fakeObject = Instantiate(trajectoryBallPrefab, position, Quaternion.identity);
-    SceneManager.MoveGameObjectToScene(fakeObject.gameObject, _simulationScene);
+    var visualizerObject = Instantiate(trajectoryVisualizerPrefab, position, Quaternion.identity);
+    SceneManager.MoveGameObjectToScene(visualizerObject.gameObject, _simulationScene);
     
-    fakeObject.Init(velocity);
+    visualizerObject.Init(velocity);
 
-    LineRenderer.positionCount = MaxPhysicsFrameIterations;
+    LineRenderer.positionCount = PhysicsFrameIterations;
 
-    for (int i = 0; i < MaxPhysicsFrameIterations; i++)
+    for (int i = 0; i < PhysicsFrameIterations; i++)
     {
       _physicsScene.Simulate(Time.fixedDeltaTime);
-      LineRenderer.SetPosition(i, fakeObject.transform.position);
+      LineRenderer.SetPosition(i, visualizerObject.transform.position);
     }
-    
-    Destroy(fakeObject.gameObject);
+
+    Destroy(visualizerObject.gameObject);
 
   }
+
+  #region Trajectory Configuration
+  /// <summary>
+  /// Updates the forces when the player has pulled the slingshot
+  /// </summary>
+  /// <param name="appliedForce"></param>
+  public void UpdateTrajectoryForce(int appliedForce)
+  {
+    PhysicsFrameIterations = DefaultIterationsCount + appliedForce;
+    TrajectoryHeightForce = DefaultTrajectoryHeight + appliedForce / 1000f;
+    TrajectoryForce = DefaultTrajectoryForce + appliedForce/2f;
+  }
+  
+  /// <summary>
+  /// Resets forces to default when the player has released the slingshot bend
+  /// </summary>
+  public void ResetTrajectoryForce()
+  {
+    PhysicsFrameIterations = DefaultIterationsCount;
+    TrajectoryHeightForce = DefaultTrajectoryHeight;
+    TrajectoryForce = DefaultTrajectoryForce;
+  }
+  #endregion
+
 }

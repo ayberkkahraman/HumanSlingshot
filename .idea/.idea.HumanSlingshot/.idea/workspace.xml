@@ -3,20 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="045e77d9-6de4-44e7-8d19-9186fc28ef9c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HumanSlingshot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HumanSlingshot/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FBXFiles/Sling/SlingRubber.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FBXFiles/Sling/SlingRubber.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FBXFiles/Sling/sling4.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FBXFiles/Sling/sling4.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Line.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Line.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/_TestPackage/Low Poly Water/Plane Meshes/Plane10x10W5H5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/_TestPackage/Low Poly Water/Plane Meshes/Plane10x10W5H5.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/Interactables/Sling.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/Interactables/Sling.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/LightingData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/LightingData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/ReflectionProbe-0.exr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/ReflectionProbe-0.exr.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Commands.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Commands/Command.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Commands/Command.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SlingshotStage.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SlingshotStage.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Game/Character/Human.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Game/Character/Human.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Game/Slingshot/Projection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Game/Slingshot/Projection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Game/Slingshot/SlingshotController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Game/Slingshot/SlingshotController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Game/TrajectoryBall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Game/TrajectoryVisualizer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Game/TrajectoryBall.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Game/TrajectoryVisualizer.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +22,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Game/Character/Human.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Game/Slingshot/Projection.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Game/TrajectoryBall.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Game/TrajectoryVisualizer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -85,7 +81,7 @@
       <option name="presentableId" value="Default" />
       <updated>1669122938821</updated>
       <workItem from="1669122942549" duration="1338000" />
-      <workItem from="1669244966028" duration="13431000" />
+      <workItem from="1669244966028" duration="21643000" />
     </task>
     <servers />
   </component>
@@ -95,6 +91,17 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

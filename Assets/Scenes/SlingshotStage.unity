@@ -3689,8 +3689,8 @@ MonoBehaviour:
   - {fileID: 108575927}
   - {fileID: 119442947}
   ExplosionCenter: {fileID: 1270435283}
-  ExplosionRadius: 5
-  ExplosionForce: 75
+  ExplosionRadius: 6
+  ExplosionForce: 100
   DefaultObstaclesCount: 0
 --- !u!1 &412039571
 GameObject:
@@ -20650,7 +20650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54be3ab1185721498bf4349d9578ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameCompletePercentageCondition: 0.8
+  GameCompletePercentageCondition: 80
   GameState: 0
 --- !u!4 &2088563728
 Transform:

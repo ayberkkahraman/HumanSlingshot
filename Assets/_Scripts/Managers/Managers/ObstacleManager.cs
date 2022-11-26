@@ -14,7 +14,7 @@ public class ObstacleManager : MonoBehaviour
 
   public Transform ExplosionCenter;
   [Range(2.5f, 20.0f)][SerializeField] private float ExplosionRadius = 5f;
-  [Range(20f, 75f)][SerializeField] private float ExplosionForce = 40f;
+  [Range(20f, 150f)][SerializeField] private float ExplosionForce = 100f;
   public List<Rigidbody> ObstacleRigidbodies
   {
     get => _rigidbodies;

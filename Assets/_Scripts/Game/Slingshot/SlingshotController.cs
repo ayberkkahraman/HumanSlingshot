@@ -71,6 +71,9 @@ public class SlingshotController : MonoBehaviour
   /// </summary>
   private void InputConfiguration()
   {
+
+    if (Human == null) return;
+    
     //Checks If the player is touching the screen or not
     if (Input.touchCount <= 0)return;
         
@@ -143,6 +146,7 @@ public class SlingshotController : MonoBehaviour
     if (_pullingSling)
     {
         Human.Throw(_projection);
+        Human = null;
     }
     
     SlingshotPuller.transform.DOMove(_defaultSlingshotPosition, SlingPositionResetDuration);

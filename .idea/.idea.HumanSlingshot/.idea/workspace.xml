@@ -3,16 +3,33 @@
   <component name="ChangeListManager">
     <list default="true" id="045e77d9-6de4-44e7-8d19-9186fc28ef9c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HumanSlingshot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HumanSlingshot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FBXFiles/Sling/SlingRubber.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FBXFiles/Sling/SlingRubber.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FBXFiles/Sling/sling4.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FBXFiles/Sling/sling4.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Line.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Line.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Man/Animations/Climb.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Characters/Man/Animations/Climb.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Man/Man.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Characters/Man/Man.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Line.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Line.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/_TestPackage/Low Poly Water/Plane Meshes/Plane10x10W5H5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/_TestPackage/Low Poly Water/Plane Meshes/Plane10x10W5H5.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/Characters/Man.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/Characters/Man.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/Interactables/Sling.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/Interactables/Sling.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SlingshotStage.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SlingshotStage.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Game/Character/Human.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Game/Character/Human.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Game/Slingshot/Projection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Game/Slingshot/Projection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Game/Character/Human.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Game/Character/Human.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Game/Slingshot/SlingshotController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Game/Slingshot/SlingshotController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Game/TrajectoryBall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Game/TrajectoryVisualizer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Game/TrajectoryBall.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Game/TrajectoryVisualizer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/ManagerContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/ManagerContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/ManagerContainer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/ManagerContainer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/Managers/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/Managers/CameraManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/Managers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/Managers/GameManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/Managers/GameManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/Managers/SaveManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/Managers/SaveManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/Managers/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/Managers/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/Managers/UIManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/Managers/UIManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/SubSystems/Behaviours.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/SubSystems/Behaviours/DataBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/SubSystems/Behaviours/DataBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/SubSystems/Extensions/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/SubSystems/Extensions/Extensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +37,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Sea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Game/Character/Human.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Game/Slingshot/Projection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Game/TrajectoryVisualizer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Managers/Managers/HumanSelectionManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Managers/Managers/ObstacleManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Primitives/Rotator.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -81,7 +102,8 @@
       <option name="presentableId" value="Default" />
       <updated>1669122938821</updated>
       <workItem from="1669122942549" duration="1338000" />
-      <workItem from="1669244966028" duration="21643000" />
+      <workItem from="1669244966028" duration="22447000" />
+      <workItem from="1669386010746" duration="20187000" />
     </task>
     <servers />
   </component>

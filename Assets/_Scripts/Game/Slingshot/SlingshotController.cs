@@ -9,7 +9,7 @@ public class SlingshotController : MonoBehaviour
   #region Fields
 
   [SerializeField] private Collider SlingshotPuller;
-  [SerializeField] private Human Human;
+  public Human Human;
 
   [Space]
   [Range(.5f,1.25f)]
@@ -169,6 +169,8 @@ public class SlingshotController : MonoBehaviour
     //Sets the limit for positions
     pullPositionX = Mathf.Clamp(pullPositionX, -PullForceHorizontalLimit, PullForceHorizontalLimit);
     pullPositionZ = Mathf.Clamp(pullPositionZ, -PullForceVerticalLimit, PullForceVerticalLimit);
+
+    if (pullPositionZ > 0f) { pullPositionZ = 0; }
 
     #region Applied Trajectory Simulation
     //Apply force to the trajectory simulation

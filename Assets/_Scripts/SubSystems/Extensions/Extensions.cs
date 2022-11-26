@@ -30,6 +30,17 @@ namespace _Scripts.SubSystem.Extensions
       {
         return gameObject.GetComponent<T>() != null;
       }
+      
+      /// <summary>
+      /// Checks if the Transform has Component or not
+      /// </summary>
+      /// <param name="gameObject"></param>
+      /// <typeparam name="T"></typeparam>
+      /// <returns></returns>
+      public static bool HasComponent<T>(this Transform gameObject) where T : Component
+      {
+        return gameObject.GetComponent<T>() != null;
+      }
       #endregion
     
       #region LayerMask Systems

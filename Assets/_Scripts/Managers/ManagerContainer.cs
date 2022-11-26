@@ -20,16 +20,17 @@ public class ManagerContainer : MonoBehaviour{
 
 
 
+  // ReSharper disable Unity.PerformanceAnalysis
   /// Get Instance for singleton access
   /// <typeparam name="T"></typeparam>
   /// <returns></returns>
   public T GetInstance<T>() where T : MonoBehaviour
   {
     //CHECKS IF THE MANAGERS LIST CONTAINS THE "T" INSTANCE
-    if (Managers.Exists(x => x as T != null))
+    if (Managers.Exists(x => x as T))
     {
       //FINDS THE INSTANCE FOR ASSIGNING TO ACCESS
-      return Managers.Find(x => x as T != null) as T;
+      return Managers.Find(x => x as T) as T;
     }
     else { Debug.LogError($"Managers list not contains the **{typeof(T)}**");
       return null;
